@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>reg exp</title>
+</head>
+<body>
+	<form>
+		<table>
+ <tr>
+ 	<td>REgexp</td>
+ 	<td>
+ <input type="text" id="i1" required></td></tr>
+ <tr>
+ 	<td>String</td><td>
+ <input type="text" id="i2" required></td></tr>
+ <tr>
+ 	<td><input type="submit" id="i3" onclick="myfun()"></td>
+ 	<td><input type="button" value="show location" id="i4" onclick="myfun2()"></td></tr>
+</table>
+<script type="text/javascript">
+		
+		function myfun()
+	{
+
+       var j=0;
+		var r = document.getElementById("i1").value; 
+	    
+		var s = document.getElementById("i2").value;
+
+
+
+		if(r.test(s))
+		{
+			window.alert("succssfull");
+			j=1;
+		}
+		else
+		{
+
+		}
+	}
+	    function myfun2()
+	    {
+           if(j == 1)
+           {
+alert("string is matched at"+r.lastIndex(s));
+
+           }
+           else
+           {
+
+           }
+	    }
+</script>
+</body>
+</html>

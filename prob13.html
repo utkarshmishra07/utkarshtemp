@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<h1 style="text-align: center;color:white">Product Details</h1>
+
+	<style>
+	table{
+		    background-color:deepskyblue;
+		    border:10px solid white;
+
+	}
+	
+			body{
+				background-color: deepskyblue;
+			}
+</style>
+</head>
+
+<body> 
+	 <center>
+	<table>
+	  <tr>
+	     <td>Category:</td>
+	     <td><select onchange="Myfun()" id="select1">
+	          <option name="select" >--------</option>
+	          <option name="Electronics" id='Electronics'>Electronics</option>
+	          <option name="Grocery"  id='Grocery'>Grocery</option>
+	      </select>
+        </td>
+    </tr>
+
+        <tr>
+        	<td>Product:</td>
+        	<td> <select id="pick1">
+        	    </select>
+        </td>
+    </tr>
+
+    <tr>
+    	<td>Quantity</td>
+    	<td><input type="text" id="text1" onmouseenter="calcprice()"></td>
+    </tr>
+
+    <tr>
+    	 <td>Total price</td>
+    	 <td><input type="text" id="text2"></td>
+    </tr>
+
+    
+
+	</table>
+</center>
+<script type="text/javascript">
+	function Myfun() {
+		         var x=document.getElementById("select1").value;
+		         if(x=="Electronics")
+		         {
+		         	 var items=["Mobile","Laptop","Telivision"];
+
+		         }
+		         else if(x=="Grocery")
+		         {
+		         	 var items=["Soap","Power"];
+		         }
+		         else
+		         {
+
+		         }
+		         var str="";
+		         for(var item of items)
+		         {
+		         	 str=str+"<option>"+item+"</option>"
+		         }
+		         document.getElementById('pick1').innerHTML=str;
+		         document.getElementById("select1").addEventListener("onchange", Myfun);
+	}
+  function calcprice()
+        {
+        	 var y=document.getElementById("pick1").value;
+        	 var en=parseInt(document.getElementById("text1").value);
+        	 if(y=="Telivision")
+        	 {
+        	 	 var price=20000;
+        	 	 en=price*en;
+        	 }
+        	 else if(y=="Laptop")
+        	 {
+        	 	var price=30000;
+        	 	en=price*en;
+        	 }	
+        	 else if(y=="Mobile")
+        	 {
+        	 	var price=10000;
+        	 	en=price*en;
+        	 }
+        	 else if(y=="Soap")
+        	 {
+        	 	var price=40;
+        	 	en=price*en;
+        	 }
+        	 else if(y=="Powder")
+        	 {
+        	 	var price=90;
+        	 	en=price*en;
+        	 }
+        	 else
+        	 {
+
+        	 }
+        	 document.getElementById('text2').innerHTML=en;
+        	 document.getElementById('pick1').addEventListener("onmouseenter",calcprice);
+
+
+        }
+
+
+
+</script>
+
+</body>
+</html>

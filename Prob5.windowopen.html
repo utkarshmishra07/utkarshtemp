@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Creating a new window in JS</title>
+   <script type="text/javascript">
+   	function newWindow()
+   	{     
+   		 var width=parseInt(document.getElementById("width").value);
+   		 var height=parseInt(document.getElementById("height").value);
+   		 var left=parseInt(document.getElementById("left").value);
+   		 var top=parseInt(document.getElementById("top").value);
+        var another=window.open("","","width="+width+",height="+height+",left="+left+",top="+top);
+          another.document.write("This window is beacuse of the customization in the window table")
+   	}
+
+   	 
+
+
+   </script>
+   <style type="text/css">
+   	
+   td{
+   	   border:2px solid blue; 
+   	   cell-padding:10px;
+   }
+   table{
+   	   border:2px solid blue; 
+   	   cell-padding:10px;
+   }
+
+   #d1,#d2{
+   	      font-size:20px;
+   	      text-align:center;
+   	      font-weight: bolder;
+   }
+   div{
+   	text-align:center;
+   }
+
+   input{
+   	  padding: 5px;
+   }
+
+   </style>
+
+
+</head>
+<body>
+	<div>
+<table>
+
+    <tr>
+    	<td id="d1" colspan="4">Create a New Window</td>
+    </tr>
+
+    <tr>
+    	<td  id="d2" colspan="4">Window size</td>
+    </tr>	
+    <tr>
+    	<td>Width</td>
+    	<td><input type="text" id="width"></td>
+    	<td>Height</td>
+    	<td><input type="text" id="height"></td>
+    </tr>
+
+    <tr>
+    	<td colspan="4" style="text-align: center;font-weight: bolder;">Position</td>
+
+     <tr>
+        <td>Left</td>
+    	<td><input type="text" id="left"></td>
+    	<td>Top</td>
+    	<td><input type="text" id="top"></td>
+    </tr>
+
+    <tr>
+    	<td colspan="3" style="text-align: center"><input type="button"  id="createnew" onclick="newWindow()" value="Create window" ></td>
+    	<td   style="text-align:center"><input type="button"   id="clear"  onclick="window.open()"value="clear"></td>
+    </tr>
+    	
+</table>
+</div>
+
+</body>
+
+
+
+</html>

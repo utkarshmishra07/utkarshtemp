@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<h2>Enter Loan Information</h2><br/>
+	<script type="text/javascript">
+
+		function calc()
+		{
+		 var input1=parseInt(document.getElementById('input1').value);
+		 var input2=parseInt(document.getElementById('input2').value);
+		 var input3=parseInt(document.getElementById('input3').value);
+
+		 var interest= (input1*input2*input3)/100;
+		  var monthly=interest;
+		  var totalpayment=input1+(input3*interest);
+		  var totalinterest= input3*interest;
+         document.getElementById('input4').value=interest;
+
+         document.getElementById('input5').value=totalpayment;
+         document.getElementById('input6').value=totalinterest;
+		  //document.write(interest);
+
+     }
+
+		 
+	</script>
+</head>
+<body>
+	
+		<table>
+			<tr>
+<td>	<label>1) Amount of the loan(Any Currency)</label>&nbsp;</td>
+<td>	<input type="text" id="input1" required><br/>
+	 </td></tr>
+	 <tr>
+	<td><label>2) Annual Percentage rate of interest</label>&nbsp;</td>
+	<td><input type="text" id="input2" required><br/></td>
+</tr>
+<tr>
+	<td><label>3) Repayment period in years</label>&nbsp;</td>
+	<td><input type="text" id="input3" required><br/>
+	
+	</td>
+</tr>
+</table>
+      <input type="submit" value="compute" onclick="calc()" id="btn1"><br/>
+
+    <h2>Payment Information:</h2><br/>
+    <table><tr>
+  <td>  <label>4) Your monthly payment will be</label>&nbsp;</td>
+	<td><input type="text" id="input4"><br/></td></tr>
+	<tr>
+	<td><label>5) Your total payment will be</label>&nbsp;</td>
+	<td><input type="text" id="input5"><br/></td></tr>
+	<tr><td><label>6)Your total interest payment will be </label>&nbsp;</td>
+	<td><input type="text" id="input6"><br/></td>
+</tr>
+</table>
+
+    
+
+</body>
+</html>
