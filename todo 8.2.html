@@ -1,0 +1,163 @@
+<html>
+<head>
+	<title></title>
+	<h1 style="text-align: center;color:white">Product Details</h1>
+
+	<style>
+	table{
+		    background-color:deepskyblue;
+		    border:15px solid white;
+			padding:5px;
+
+	}
+	
+			body{
+				background-color: deepskyblue;
+			}
+</style>
+</head>
+ 
+<body> 
+	 <center>
+	<form id="from1">
+		<table>
+	  <tr>
+	     <td>Category:</td>
+	     <td><select onchange="Myfun()" id="select1">
+	          <option name="select" >--------</option>
+	          <option name="Electronics" id='Electronics'>Electronics</option>
+	          <option name="Grocery"  id='Grocery'>Grocery</option>
+	      </select>
+        </td>
+    </tr>
+
+        <tr>
+        	<td>Product:</td>
+        	<td> <select id="pick1" value="">
+        	    </select>
+        </td>
+    </tr>
+
+    <tr>
+    	<td>Quantity</td>
+    	<td><input type="text" id="text1" onkeyup="calcprice()"></td>
+    </tr>
+
+    <tr>
+    	 <td>Total price</td>
+    	 <td><input type="text" id="text2"></td>
+	</tr>
+	<tr>
+		<td><input type="button" value="submit" id="btn" onclick="result()" ></td>
+	</tr>
+
+    
+
+	</table>
+</form>
+</center>
+<script type="text/javascript">
+	function Myfun() {
+		         var x=document.getElementById("select1").value;
+		         if(x=="Electronics")
+		         {
+		         	 var items=["Mobile","Laptop","Telivision"];
+
+		         }
+		         else if(x=="Grocery")
+		         {
+		         	 var items=["Soap","Powder"];
+		         }
+		         else
+		         {
+
+		         }
+		         var str="";
+		         for(var item of items)
+		         {
+		         	 str=str+"<option>"+item+"</option>"
+		         }
+		         document.getElementById('pick1').innerHTML=str;
+		         document.getElementById("select1").addEventListener("onchange", Myfun);
+	}
+  function calcprice()
+        {
+        	 var y=document.getElementById("pick1").value;
+        	 var en=parseInt(document.getElementById("text1").value);
+        	 if(y=="Telivision")
+        	 {
+        	 	 var price=20000;
+        	 	 en=price*en;
+        	 }
+        	 else if(y=="Laptop")
+        	 {
+        	 	var price=30000;
+        	 	en=price*en;
+        	 }	
+        	 else if(y=="Mobile")
+        	 {
+        	 	var price=10000;
+        	 	en=price*en;
+        	 }
+        	 else if(y=="Soap")
+        	 {
+        	 	var price=40;
+        	 	en=price*en;
+        	 }
+        	 else if(y=="Powder")
+        	 {
+        	 	var price=90;
+        	 	en=price*en;
+        	 }
+        	 else
+        	 {
+
+        	 }
+        	 document.getElementById('text2').value=en;
+        	 document.getElementById('pick1').addEventListener("onkeyup",calcprice);
+
+
+        }
+
+
+		function result()
+		 {          var width=500;
+				   var height=150;
+				   var  left=420;
+				   var top=350;
+		       var another=window.open("","","width="+width+",height="+height+",left="+left+",top="+top);
+                 var qty= parseInt(document.getElementById("text1").value);
+			 	 var amount= parseInt(document.getElementById("text2").value);
+				  var product=document.getElementById("pick1").value;
+
+				   if(product=="Telivision"||product=="Mobile"||product=="Laptop")
+				   {
+					   another.document.write("<table border=1><tr><th>Category</th><th>Product</th><th>Price per quantity in rupess</th><th>Purchase Amount</th></tr><tr><td>Electronics</td><td>"+product+"</td><td>"+amount/qty+"</td><td>"+amount+"</td></tr></table>");
+
+				   }
+				   else if(product=="Soap"||product=="Power")
+				   {
+					another.document.write("<table border=1><tr><th>Category</th><th>Product</th><th>Price per quantity in rupess</th><th>Purchase Amount</th></tr><tr><td>groceries</td><td>"+product+"</td><td>"+amount/qty+"</td><td>"+amount+"</td></tr></table>");
+				   }
+	else{
+
+	 }
+
+}
+
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

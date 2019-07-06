@@ -1,0 +1,23 @@
+<html>
+<head><title>Embedding Script tag in HTML Document</title>
+<script>
+document.write("This text is displayed from the script tag embedded in the head tag of the document");
+//TODO:use write method in document object to display the desired output
+</script>
+<hr>
+<script src="todo1.4.js">
+</script>
+</head>
+<body>
+<script>
+document.write("<i>This text is displayed from the script tag embedded in the body tag of the document</i>");
+//TODO: use write method in document object to display desired the output </script>
+<hr>
+<p><code>The actual script is in external script file called "todo1.4.js"</code></p>
+<script>
+document.write("This text is displayed by calling external function: ");
+dispHello();
+//TODO: Insert your code here to call the function dispHello() from the Hello.js file </script>
+<hr>
+</body>
+</html>

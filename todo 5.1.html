@@ -1,0 +1,67 @@
+<html>
+
+<head>
+
+<title> window example </title>
+
+</head>
+
+<script>
+
+function nwindow()
+
+{
+window.open("todo 4.1.html", "MessageBox");
+ window.open('Micro', 'width=, height=700');
+/*TODO: get the height, width, left and top from the form object and pass the values to open method of window along with the name of the html file to be opened in the new window.*/ 
+}
+
+</script>
+
+<body >
+
+<form id="frmlab">
+
+<table border="1" cellspacing="8" cellpadding="10" bordercolor="blue">
+	<tr>
+		<th colspan="4">Create a new window</th>
+	</tr>
+	<tr>
+		<td colspan="4" align="center">Window Size</td>
+	</tr>
+		<tr>
+		<td>Width:</td>
+		<td><input type="text" style="width:80px" id="width"></input></td>
+		<td>Height:</td>
+		<td><input type="text" style="width:80px" id="height"> </td>
+	</tr>
+	<tr>
+		<td colspan="4" align="center">POSITION</td>
+	</tr>
+	<tr>
+		<td>Left:</td>
+		<td><input type="text" style="width:80px" id="left"> </td>
+		<td>Top:</td>
+		<td><input type="text" style="width:80px" id="right"> </td>
+	</tr>
+	<tr align="center">
+		<td colspan="3"><button onclick="nwindow()">New Window</button></td>
+		<td><input type="reset"></input></td>
+	</tr>
+</table>
+
+
+
+ 
+
+ 
+
+
+
+
+
+</form>
+
+</body>
+
+</html>
